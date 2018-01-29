@@ -20,7 +20,7 @@
         <p class="overview">
           {{ result.overview }}
         </p>
-        <p class="release-date">Released on {{ result.release_date }}</p>
+        <p class="release-date">Released on {{ new Date(result.release_date).toLocaleDateString("en-US") }}</p>
         <ul class="genre-list">
           <li v-for="genre in result.genres"> {{ genre }} </li>
         </ul>
