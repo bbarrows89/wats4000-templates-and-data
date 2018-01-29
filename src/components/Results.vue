@@ -8,12 +8,12 @@
     </p>
 
     <ul>
-      <li class="movie-item" v-for="result in results">
+      <li v-for="result in results" :key="result.id" class="movie-item">
         <img :src="'https://image.tmdb.org/t/p/w150_and_h225_bestv2' + result.poster_path" :alt="result.title + ' Poster'" class="poster-image">
         <h2 class="title"><a :href="'https://www.themoviedb.org/movie/'+result.id">{{ result.title }}</a></h2>
         <div class="ratings">
           <span class="rating-category critics-choice" v-if="result.vote_average > 8">Critic's Choice</span>
-          <span class="rating-category well-liked" v-else-if="result.vote_average < 8 && result.vote_average > 7">Well Liked</span>
+          <span class="rating-category well-liked" v-else-if="result.vote_average > 7">Well Liked</span>
           <span class="rating-category stinker" v-else>Stinker</span>
           <span class="vote-average">{{ result.vote_average }}</span> with <span class="vote-count">{{ result.vote_count }}</span> votes 
         </div>
@@ -22,7 +22,7 @@
         </p>
         <p class="release-date">Released on {{ new Date(result.release_date).toLocaleDateString("en-US") }}</p>
         <ul class="genre-list">
-          <li v-for="genre in result.genres"> {{ genre }} </li>
+          <li v-for="(genre, index) in result.genres" :key="index"> {{ genre }} </li>
         </ul>
       </li>
     </ul>
