@@ -8,8 +8,8 @@
     </p>
 
     <ul>
-      <li class="movie-item"><!-- TODO: Use a for loop to iterate through each result in the results array. -->
-        <img src="https://image.tmdb.org/t/p/w150_and_h225_bestv2/p64TtbZGCElxQHpAMWmDHkWJlH2.jpg" alt="Title of Movie Poster" class="poster-image"><!-- TODO: Combine base URL with poster_path value in data to make the image src URL (Hint: Use v-bind.). -->
+      <li class="movie-item" v-for="result in results">
+        <img :src="'https://image.tmdb.org/t/p/w150_and_h225_bestv2' + result.poster_path" :alt="result.title + ' Poster'" class="poster-image">
         <h2 class="title"><a href="https://www.themoviedb.org/movie/78">Movie Title Goes Here</a></h2><!-- TODO: Combine base URL with movie ID value in data to make the link href URL (Hint: Use v-bind.). -->
         <div class="ratings">
           <span class="rating-category critics-choice">Critic's Choice</span><!-- TODO: Use a conditional to determine if the vote_average is over 8. -->
