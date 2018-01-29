@@ -12,9 +12,9 @@
         <img :src="'https://image.tmdb.org/t/p/w150_and_h225_bestv2' + result.poster_path" :alt="result.title + ' Poster'" class="poster-image">
         <h2 class="title"><a :href="'https://www.themoviedb.org/movie/'+result.id"> {{ result.title }} </a></h2>
         <div class="ratings">
-          <span class="rating-category critics-choice">Critic's Choice</span><!-- TODO: Use a conditional to determine if the vote_average is over 8. -->
-          <span class="rating-category well-liked">Well Liked</span><!-- TODO: Use a conditional to determine if the vote_average is between 7 and 8. -->
-          <span class="rating-category stinker">Stinker</span><!-- TODO: Use a conditional to determine if the vote_average is under 7. -->
+          <span class="rating-category critics-choice" v-if="result.vote_average > 8">Critic's Choice</span>
+          <span class="rating-category well-liked" v-else-if="result.vote_average < 8 && result.vote_average > 7">Well Liked</span>
+          <span class="rating-category stinker" v-else>Stinker</span>
           <span class="vote-average">8.4</span> with <span class="vote-count">3676</span> votes <!-- TODO: Fill in the vote_average and vote_count values accordingly. -->
         </div>
         <p class="overview"><!-- TODO: Fill in the movie overview from the data. -->
