@@ -3,8 +3,8 @@
     <h1>Top Movies from the 20<sup>th</sup> Century</h1>
     <p class="search-meta">
       <span class="current-page"><b>Current Page:</b> {{ page }} </span>
-      <span class="total-pages"><b>Pages:</b> {{total_pages}} </span>
-      <span class="total-results"><b>Count:</b> {{total_results}} </span>
+      <span class="total-pages"><b>Pages:</b> {{ total_pages }} </span>
+      <span class="total-results"><b>Count:</b> {{ total_results }} </span>
     </p>
 
     <ul>
@@ -15,12 +15,10 @@
           <span class="rating-category critics-choice" v-if="result.vote_average > 8">Critic's Choice</span>
           <span class="rating-category well-liked" v-else-if="result.vote_average < 8 && result.vote_average > 7">Well Liked</span>
           <span class="rating-category stinker" v-else>Stinker</span>
-          <span class="vote-average">8.4</span> with <span class="vote-count">3676</span> votes <!-- TODO: Fill in the vote_average and vote_count values accordingly. -->
+          <span class="vote-average"> {{ result.vote_average }} </span> with <span class="vote-count"> {{ result.vote_count }} </span> votes 
         </div>
-        <p class="overview"><!-- TODO: Fill in the movie overview from the data. -->
-          Movie overivew goes here. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Cras dapibus. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum.
-        </p>
-        <p class="release-date">Original Release: 1999-12-31</p><!-- TODO: Fill in the release date from the data. -->
+        <p class="overview"> {{ result.overview }} </p>
+        <p class="release-date"> {{ result.release_date }} </p><!-- TODO: Fill in the release date from the data. -->
         <ul class="genre-list"><!-- TODO: Use a loop to iterate through all of the genres for this movie. -->
           <li>genre</li><!-- TODO: Fill in the genre name from the data. -->
         </ul>
