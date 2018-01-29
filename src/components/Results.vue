@@ -2,9 +2,9 @@
   <div class="results">
     <h1>Top Movies from the 20<sup>th</sup> Century</h1>
     <p class="search-meta">
-      <span class="current-page"><b>Current Page:</b> 1</span><!-- TODO: Fill in current page value from data. -->
-      <span class="total-pages"><b>Pages:</b> 777</span><!-- TODO: Fill in total pages value from data. -->
-      <span class="total-results"><b>Count:</b> 3232</span><!-- TODO: Fill in results count value from data. -->
+      <span class="current-page"><b>Current Page:</b> {{ page }} </span>
+      <span class="total-pages"><b>Pages:</b> {{total_pages}} </span>
+      <span class="total-results"><b>Count:</b> {{total_results}} </span>
     </p>
 
     <ul>
