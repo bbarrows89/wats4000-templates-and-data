@@ -10,7 +10,7 @@
     <ul>
       <li class="movie-item" v-for="result in results">
         <img :src="'https://image.tmdb.org/t/p/w150_and_h225_bestv2' + result.poster_path" :alt="result.title + ' Poster'" class="poster-image">
-        <h2 class="title"><a href="https://www.themoviedb.org/movie/78">Movie Title Goes Here</a></h2><!-- TODO: Combine base URL with movie ID value in data to make the link href URL (Hint: Use v-bind.). -->
+        <h2 class="title"><a :href="'https://www.themoviedb.org/movie/'+result.id"> {{ result.title }} </a></h2>
         <div class="ratings">
           <span class="rating-category critics-choice">Critic's Choice</span><!-- TODO: Use a conditional to determine if the vote_average is over 8. -->
           <span class="rating-category well-liked">Well Liked</span><!-- TODO: Use a conditional to determine if the vote_average is between 7 and 8. -->
