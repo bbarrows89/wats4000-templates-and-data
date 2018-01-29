@@ -2,7 +2,7 @@
   "name": "templates-project",
   "version": "1.0.0",
   "description": "A project to practice working with data in templates.",
-  "author": "Shawn Rider <shawn@shawnrider.com>",
+  "author": "Bryan Barrows <bryanbarrows@live.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
